@@ -8,18 +8,24 @@ admin.initializeApp({
   databaseURL: 'https://cse110-6b013.firebaseio.com'
 });
 
-// Get the Auth service for the default app
-var auth = admin.auth();
+var db = admin.firestore();
+var usersRef = db.collection('users');
 
-const listUsers = () => {
-  auth.listUsers()
-      .then((result) => result.users.forEach(user => console.log(user)))
-      .catch((error) => console.log(error))
-      .finally(() => exit());
-};
-
-const exit = () => {
-  admin.app().delete();
-}
+const listUsers = () => usersRef.listDocuments()
+  .then((docs) => {
+    docs.forEach((doc) => {
+      doc.get()
+        .then((snap) => {
+          if (snap.exists) {
+            const user = snap.data();
+            console.log(`>>> document UID: ${doc.id}`);
+            console.log(JSON.stringify(user, Object.keys(user).sort(), 2));
+            console.log('*'.repeat(40));
+          }
+        })
+        .catch((err) => console.log(err));
+    })
+  })
+  .catch((err) => console.log(err));
 
 listUsers();
