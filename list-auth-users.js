@@ -1,7 +1,7 @@
-var admin = require('firebase-admin');
+const admin = require('firebase-admin');
 
 // Fetch the service account key JSON file contents
-var serviceAccount = require('./cse110-firebase-adminsdk-private-key.json');
+const serviceAccount = require('./cse110-firebase-adminsdk-private-key.json');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
@@ -9,7 +9,7 @@ admin.initializeApp({
 });
 
 // Get the Auth service for the default app
-var auth = admin.auth();
+const auth = admin.auth();
 
 const listAuthUsers = () => {
   auth.listUsers()

@@ -1,15 +1,15 @@
-var admin = require('firebase-admin');
+const admin = require('firebase-admin');
 
 // Fetch the service account key JSON file contents
-var serviceAccount = require('./cse110-firebase-adminsdk-private-key.json');
+const serviceAccount = require('./cse110-firebase-adminsdk-private-key.json');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: 'https://cse110-6b013.firebaseio.com'
 });
 
-var db = admin.firestore();
-var usersRef = db.collection('users');
+const db = admin.firestore();
+const usersRef = db.collection('users');
 
 const listUsers = () => usersRef.listDocuments()
   .then((docs) => {
