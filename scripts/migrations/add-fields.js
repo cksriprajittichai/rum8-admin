@@ -35,13 +35,9 @@ const migrate = () => usersRef.listDocuments()
   })
   .catch((err) => console.log(err));
 
-const isEven = (num) => {
-  return num % 2 == 0;
-}
+const isEven = (num) => num % 2 == 0;
 
-const exit = () => {
-  admin.app().delete();
-}
+const exit = () => admin.app().delete();
 
 if (!isEven(process.argv.length)) {
   console.log('Invalid number of arguments');

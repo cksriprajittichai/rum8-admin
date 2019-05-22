@@ -14,12 +14,10 @@ const auth = admin.auth();
 const listAuthUsers = () => {
   auth.listUsers()
     .then((result) => result.users.forEach(user => console.log(user)))
-    .catch((error) => console.log(error))
+    .catch((err) => console.log(err))
     .finally(() => exit());
 };
 
-const exit = () => {
-  admin.app().delete();
-}
+const exit = () => admin.app().delete();
 
 listAuthUsers();
