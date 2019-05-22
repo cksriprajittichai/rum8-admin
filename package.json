@@ -9,6 +9,7 @@
   "author": "Chase Sriprajittichai",
   "license": "ISC",
   "dependencies": {
+    "fast-csv": "^2.5.0",
     "firebase-admin": "^7.3.0"
   }
 }
