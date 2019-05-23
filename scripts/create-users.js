@@ -36,9 +36,7 @@ const createBaseUser = (onComplete) => {
       }
       baseUser[key] = value;
     })
-    .on('end', () => {
-      onComplete(baseUser);
-    });
+    .on('end', () => onComplete(baseUser));
 
   stream.pipe(csvStream);
 }
@@ -66,10 +64,12 @@ const onCreateBaseUserSuccess = (baseUser) => {
 }
 
 if (process.argv.length !== 3) {
+  console.log('This script must be run from the top-level of the project directory');
   console.log('Invalid number of arguments');
   console.log('Enter the number of users to create');
   exit();
 } else if (isNaN(process.argv[2])) {
+  console.log('This script must be run from the top-level of the project directory');
   console.log('Invalid argument type');
   console.log('Enter the number of users to create');
   exit();
