@@ -30,7 +30,7 @@ roommate_allow_pets_value,0
 roommate_clean_value,0
 roommate_overnight_guests_value,0
 roommate_party_value,0
-roommate_prefer_same_gender_roommate_value,0
+roommate_prefer_same_gender_roommate_value,1
 roommate_reserved_value,0
 roommate_smoke_value,0
 roommate_stay_up_late_on_weekdays_value,0
