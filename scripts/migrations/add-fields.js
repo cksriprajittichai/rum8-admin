@@ -56,7 +56,11 @@ process.argv.forEach((input, i) => {
       keys.push(input);
     } else {
       const isString = !input || isNaN(input);
-      values.push(isString ? input : parseFloat(input));
+      if (isString) {
+        values.push(input === '{}' ? {} : input);
+      } else {
+        values.push(parseFloat(input));
+      }
     }
   }
 })
