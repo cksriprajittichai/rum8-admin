@@ -1,6 +1,7 @@
 academic_year,First
 age,18
-budget,
+budget_min,0
+budget_max,3000
 college,Muir
 email,
 first_name,
@@ -8,6 +9,8 @@ gender,Female
 last_name,
 major,Computer Science
 phone_number,
+facebook,
+snapchat,
 about_me,
 hobbies,
 interests,
