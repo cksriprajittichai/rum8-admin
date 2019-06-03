@@ -37,3 +37,4 @@ roommate_prefer_same_gender_roommate_value,1
 roommate_reserved_value,0
 roommate_smoke_value,0
 roommate_stay_up_late_on_weekdays_value,0
+room_type, ""
