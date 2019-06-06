@@ -19,7 +19,7 @@ const listUsers = () => usersRef.listDocuments()
           if (snap.exists) {
             const user = snap.data();
             console.log(`>>> document UID: ${doc.id}`);
-            console.log(JSON.stringify(user, Object.keys(user).sort(), 2));
+            console.log(user);
             console.log('*'.repeat(40));
           }
         })
